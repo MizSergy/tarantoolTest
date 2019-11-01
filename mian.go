@@ -1,7 +1,6 @@
 package main
 
 import (
-	"dataupdater/system/errors"
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
@@ -36,10 +35,6 @@ func write() {
 	for {
 		trConn := database.TarantoolConnect()
 		for _, client := range database.ListRedisConnect {
-			for errors.IsExit() {
-				return
-			}
-
 			if client.Connect() == nil {
 				fmt.Printf("Error connect %s\n", client.Host)
 				continue
