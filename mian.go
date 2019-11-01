@@ -26,9 +26,9 @@ func main() {
 
 	database.RedisInit()
 
-	write()
+	//write()
 
-	//read()
+	read()
 }
 
 func write() {
