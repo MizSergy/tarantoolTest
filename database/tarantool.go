@@ -32,6 +32,7 @@ func TarantoolInit(){
 			Pass: os.Getenv(fmt.Sprintf("TARANTOOL_PASS_%d", index)),
 		}
 		TrConns = append(TrConns, tr)
+		index++
 	}
 }
 
