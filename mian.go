@@ -89,7 +89,7 @@ func write() {
 							}
 							database.InsertOrUpdate(conn, "fulltraffic", traff)
 						}
-						v.Disconnect()
+						conn.Close()
 					}
 				}
 			}
@@ -118,7 +118,7 @@ func readClicks() {
 		for k, v := range database.TrConns {
 			conn := v.Connect()
 			database.DropTraffList(conn, itdc[k], "clicks")
-			v.Disconnect()
+			conn.Close()
 		}
 	}
 }
@@ -132,12 +132,12 @@ func readBreaks() {
 			var brk []models.Breaking
 			brk, itdb[k] = database.GetBreaksIVCodes(conn)
 			brks = append(brks, brk...)
-			v.Disconnect()
+			conn.Close()
 		}
 		for k, v := range database.TrConns {
 			conn := v.Connect()
 			database.DropTraffList(conn, itdb[k], "breaks")
-			v.Disconnect()
+			conn.Close()
 		}
 	}
 }
@@ -152,12 +152,12 @@ func readTraffic() {
 			trf, itdb[k] = database.GetTrafficIVCodes(conn)
 			trfs = append(trfs, trf...)
 			trfs = compareTraff(trfs)
-			v.Disconnect()
+			conn.Close()
 		}
 		for k, v := range database.TrConns {
 			conn := v.Connect()
 			database.DropTraffList(conn, itdb[k], "breaks")
-			v.Disconnect()
+			conn.Close()
 		}
 	}
 }

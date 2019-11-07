@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ab4e096-ab21-4681-bd44-f34e3430fcfa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/tarantool.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/tarantool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mian.go" beforeDir="false" afterPath="$PROJECT_DIR$/mian.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/breaks.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/breaks.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/click.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/click.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/fullTraffic.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/fullTraffic.go" afterDir="false" />
-    </list>
+    <list default="true" id="4ab4e096-ab21-4681-bd44-f34e3430fcfa" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +41,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="42" />
-          <entry key="go" value="9413" />
+          <entry key="go" value="9428" />
           <entry key="yml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="42" />
-          <entry key="Go" value="9413" />
+          <entry key="Go" value="9428" />
           <entry key="YAML" value="6" />
         </counts>
       </usages-collector>
@@ -75,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mian.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="285">
+              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding>
                 <element signature="e#14#178#0" expanded="true" />
               </folding>
@@ -84,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -93,20 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/redis.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-191">
-              <caret line="67" column="33" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/tarantool.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+            <state relative-caret-position="379">
+              <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
               <folding>
                 <element signature="e#18#154#0" expanded="true" />
               </folding>
@@ -195,11 +178,11 @@
       <find>CreateAt</find>
       <find>dataup</find>
       <find>data</find>
-      <find>conne</find>
       <find>cfg</find>
       <find>conn</find>
-      <find>drop</find>
       <find>read</find>
+      <find>drop</find>
+      <find>conne</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -222,12 +205,12 @@
         <option value="$PROJECT_DIR$/models/interface.go" />
         <option value="$PROJECT_DIR$/database/redis.go" />
         <option value="$PROJECT_DIR$/models/Error.go" />
-        <option value="$PROJECT_DIR$/database/tarantool.go" />
         <option value="$PROJECT_DIR$/models/click.go" />
         <option value="$PROJECT_DIR$/models/breaks.go" />
         <option value="$PROJECT_DIR$/models/fullTraffic.go" />
-        <option value="$PROJECT_DIR$/mian.go" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/mian.go" />
+        <option value="$PROJECT_DIR$/database/tarantool.go" />
       </list>
     </option>
   </component>
@@ -322,7 +305,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49787837" visible="true" weight="0.14994664" />
       <window_info id="Structure" order="1" sideWeight="0.5021216" side_tool="true" weight="0.2588047" />
@@ -330,13 +312,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3802521" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3802521" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914045" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32878152" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32878152" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -355,14 +337,26 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/mian.go</url>
-          <line>86</line>
+          <line>93</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/database/tarantool.go</url>
-          <line>108</line>
+          <line>109</line>
           <properties />
           <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/mian.go</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/database/tarantool.go</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -419,23 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/redis.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-191">
-          <caret line="67" column="33" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/tarantool.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-          <folding>
-            <element signature="e#18#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/click.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -460,20 +437,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/redis.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mian.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="285">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding>
             <element signature="e#14#178#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/database/tarantool.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="379">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+          <folding>
+            <element signature="e#18#154#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
