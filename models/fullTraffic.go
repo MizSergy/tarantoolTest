@@ -1,11 +1,20 @@
 package models
 
+import (
+	"reflect"
+	"time"
+)
+
 type FullTraffic struct {
 	IVCode uint   `json:"ivcode" db:"ivcode,omitempty" msgpack:"ivcode"`
 	VCode  string `json:"vcode" db:"vcode,omitempty" msgpack:"vcode"`
 
-	CreateAt   int `json:"create_at" db:"create_at,omitempty" msgpack:"create_at"`
-	CreateDate int `json:"create_date" db:"create_date,omitempty" msgpack:"create_date"`
+	CreateAt   time.Time `json:"create_at" db:"create_at,omitempty" msgpack:"-"`
+	CreateDate time.Time `json:"create_date" db:"create_date,omitempty" msgpack:"-"`
+
+	CreatedAt   int `msgpack:"create_at"`
+	CreatedDate int `msgpack:"create_date"`
+
 
 	SourceID    int `json:"source_id" db:"source_id,omitempty" msgpack:"source_id"`
 	Campaign    int `json:"campaign" db:"campaign,omitempty" msgpack:"campaign"`
@@ -52,4 +61,161 @@ type FullTraffic struct {
 	PrelandUrl string `json:"preland_url" db:"preland_url" msgpack:"preland_url"`
 	Session    string `json:"session" db:"session_id" msgpack:"session_id"`
 	UID        int    `json:"uid" db:"uid" msgpack:"uid"`
+}
+
+//func (t *FullTraffic)Compare(v FullTraffic){
+//	if len(t.VCode) == 0 {
+//		t.VCode = v.VCode
+//	}
+//	if !t.CreateAt.IsZero() && t.CreatedAt > 0{
+//		t.CreateAt = time.Unix(int64(v.CreatedAt),0)
+//	}
+//
+//	if !t.CreateDate.IsZero() && t.CreatedDate > 0{
+//		t.CreateDate = time.Unix(int64(v.CreatedDate),0)
+//	}
+//
+//	if t.SourceID == 0{
+//		t.SourceID = v.SourceID
+//	}
+//	if t.Campaign == 0{
+//		t.Campaign = v.Campaign
+//	}
+//	if t.StreamID == 0{
+//		t.StreamID = v.StreamID
+//	}
+//	if t.AffiliateID == 0{
+//		t.AffiliateID = v.AffiliateID
+//	}
+//	if t.PrelandID == 0{
+//		t.PrelandID = v.PrelandID
+//	}
+//
+//	if t.IsBreaked == 0{
+//		t.IsBreaked = v.IsBreaked
+//	}
+//
+//	if t.IsRefused == 0{
+//		t.IsRefused = v.IsRefused
+//	}
+//	if t.IsUnique == 0{
+//		t.IsUnique = v.IsUnique
+//	}
+//	if t.IsTest == 0{
+//		t.IsTest = v.IsTest
+//	}
+//
+//	if t.IsClick == 0{
+//		t.IsClick = v.IsClick
+//	}
+//
+//	if t.ProcessInterval == 0{
+//		t.ProcessInterval = v.ProcessInterval
+//	}
+//
+//	if t.ScreenWidth == 0{
+//		t.ScreenWidth = v.ScreenWidth
+//	}
+//	if t.ScreenHeight == 0{
+//		t.ScreenHeight = v.ScreenHeight
+//	}
+//
+//	if len(t.Language) == 0{
+//		t.Language = v.Language
+//	}
+//	if t.ClickPrice == 0{
+//		t.ClickPrice = v.ClickPrice
+//	}
+//	if len(t.Browser) == 0{
+//		t.Browser = v.Browser
+//	}
+//	if len(t.BrowserV) == 0{
+//		t.BrowserV = v.BrowserV
+//	}
+//	if len(t.Os) == 0{
+//		t.Os = v.Os
+//	}
+//	if len(t.OsV) == 0{
+//		t.OsV = v.OsV
+//	}
+//	if len(t.Country) == 0{
+//		t.Country = v.Country
+//	}
+//	if len(t.CountryCode) == 0{
+//		t.CountryCode = v.CountryCode
+//	}
+//	if len(t.Region) == 0{
+//		t.Region = v.Region
+//	}
+//	if len(t.City) == 0{
+//		t.City = v.City
+//	}
+//	if t.Ip == 0{
+//		t.Ip = v.Ip
+//	}
+//	if t.Device == 0{
+//		t.Device = v.Device
+//	}
+//	if t.IsMobil == 0{
+//		t.IsMobil = v.IsMobil
+//	}
+//	if len(t.Ad) == 0{
+//		t.Ad = v.Ad
+//	}
+//	if len(t.Site) == 0{
+//		t.Site = v.Site
+//	}
+//	if len(t.Sid1) == 0{
+//		t.Sid1 = v.Sid1
+//	}
+//	if len(t.Sid2) == 0{
+//		t.Sid2 = v.Sid2
+//	}
+//	if len(t.Sid3) == 0{
+//		t.Sid3 = v.Sid3
+//	}
+//	if len(t.Sid4) == 0{
+//		t.Sid4 = v.Sid4
+//	}
+//	if len(t.Sid5) == 0{
+//		t.Sid5 = v.Sid5
+//	}
+//	if len(t.Sid6) == 0{
+//		t.Sid6 = v.Sid6
+//	}
+//	if len(t.Sid7) == 0{
+//		t.Sid7 = v.Sid7
+//	}
+//	if len(t.Sid8) == 0{
+//		t.Sid8 = v.Sid8
+//	}
+//	if len(t.Sid9) == 0{
+//		t.Sid9 = v.Sid9
+//	}
+//
+//	if len(t.Sid10) == 0{
+//		t.Sid10 = v.Sid10
+//	}
+//	if len(t.PrelandUrl) == 0{
+//		t.PrelandUrl = v.PrelandUrl
+//	}
+//	if len(t.Session) == 0{
+//		t.Session = v.Session
+//	}
+//	if t.UID == 0{
+//		t.UID = v.UID
+//	}
+//}
+
+
+func (t *FullTraffic)Compare(v FullTraffic){
+	oval := reflect.ValueOf(t)
+	nval := reflect.ValueOf(v)
+	for i:=0; i < oval.NumField(); i++{
+		name := oval.Type().Field(i).Name
+		value := oval.Field(i).Interface()
+		if value == nil {
+			value = nval.FieldByName(name)
+		}
+	}
 }

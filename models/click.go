@@ -47,12 +47,10 @@ type Click struct {
 }
 
 func (c Click) ClickToTraffic() FullTraffic {
-
-
 	return FullTraffic{
 		VCode:    c.VCode,
 		IVCode:   c.IVCode,
-		CreateAt: c.CreateAt,
+		CreatedAt: c.CreateAt,
 
 		IsTest:   c.IsTest,
 		IsUnique: c.IsUnique,

@@ -45,7 +45,7 @@ func (b Breaking) BreaksToTraffic() FullTraffic {
 	return FullTraffic{
 		VCode:           b.VCode,
 		IVCode:          b.IVCode,
-		CreateDate:      b.CreateAt,
+		CreatedDate:     b.CreateAt,
 		IsBreaked:       b.IsBreaked,
 		IsClick:         0,
 		IsRefused:       b.IsRefused,
