@@ -13,9 +13,9 @@ import (
 )
 
 var bkrType = []string{
-	//"queue_click",
-	//"queue_breaking",
-	//"checkTime",
+	"queue_click",
+	"queue_breaking",
+	"checkTime",
 	"queue_post_back",
 }
 
