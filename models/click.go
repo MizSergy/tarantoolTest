@@ -1,13 +1,12 @@
 package models
 
-import (
-	"time"
-)
+import "time"
 
 type Click struct {
-	IVCode      uint    `json:"ivcode" db:"ivcode" msgpack:"ivcode"`
-	VCode       string  `json:"vcode" db:"vcode" msgpack:"vcode"`
-	CreateAt    int     `msgpack:"create_at"`
+	IVCode    uint      `json:"ivcode" db:"ivcode" msgpack:"ivcode"`
+	VCode     string    `json:"vcode" db:"vcode" msgpack:"vcode"`
+	CreatedAt int       `msgpack:"created_at"`
+
 	IsUnique    int     `json:"is_unique" db:"is_unique" msgpack:"is_unique"`
 	IsMobil     int     `json:"is_mobil" db:"is_mobil" msgpack:"is_mobil"`
 	IsTest      int     `json:"is_test" db:"is_test" msgpack:"is_test"`
@@ -43,14 +42,15 @@ type Click struct {
 	Session     string  `json:"session" db:"session_id" msgpack:"session_id"`
 	UserID      int     `json:"uid" db:"uid" msgpack:"uid"`
 
-	CreatedAt time.Time `json:"create_at" db:"create_at" msgpack:"-"`
+	CreateAt  time.Time `json:"create_at" db:"create_at" msgpack:"-"`
+
 }
 
 func (c Click) ClickToTraffic() FullTraffic {
 	return FullTraffic{
-		VCode:    c.VCode,
-		IVCode:   c.IVCode,
-		CreatedAt: c.CreateAt,
+		VCode:     c.VCode,
+		IVCode:    c.IVCode,
+		CreatedAt: c.CreatedAt,
 
 		IsTest:   c.IsTest,
 		IsUnique: c.IsUnique,

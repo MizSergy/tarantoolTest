@@ -9,9 +9,10 @@ import (
 )
 
 type Breaking struct {
-	IVCode   uint   `json:"ivcode" db:"ivcode" msgpack:"ivcode"`
-	VCode    string `json:"vcode" db:"vcode" msgpack:"vcode"`
-	CreateAt int    `msgpack:"create_at"`
+	IVCode    uint      `json:"ivcode" db:"ivcode" msgpack:"ivcode"`
+	VCode     string    `json:"vcode" db:"vcode" msgpack:"vcode"`
+	CreatedAt int       `msgpack:"created_at"`
+	CreateAt  time.Time `json:"create_at" db:"create_at"  msgpack:"-"`
 
 	StreamID        int     `json:"stream_id" db:"stream_id" msgpack:"stream_id"`
 	AffiliateID     int     `json:"affiliate_id" db:"affiliate_id" msgpack:"affiliate_id"`
@@ -22,7 +23,6 @@ type Breaking struct {
 	ScreenHeight int    `json:"screen_height" db:"screen_height" msgpack:"screen_height"`
 	ScreenWidth  int    `json:"screen_width" db:"screen_width" msgpack:"screen_width"`
 	Language     string `json:"language" db:"language" msgpack:"language"`
-	CreatedAt    time.Time `json:"create_at" db:"create_at"  msgpack:"-"`
 }
 
 func (b Breaking) BreaksToTraffic() FullTraffic {
@@ -45,7 +45,7 @@ func (b Breaking) BreaksToTraffic() FullTraffic {
 	return FullTraffic{
 		VCode:           b.VCode,
 		IVCode:          b.IVCode,
-		CreatedDate:     b.CreateAt,
+		CreatedDate:     b.CreatedAt,
 		IsBreaked:       b.IsBreaked,
 		IsClick:         0,
 		IsRefused:       b.IsRefused,
