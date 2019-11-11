@@ -20,8 +20,8 @@ type FullTraffic struct {
 
 	IsBreaked int `json:"is_breaked" db:"is_breaked" msgpack:"is_breaked"`
 	IsRefused int `json:"is_refused" db:"is_refused" msgpack:"is_refused"`
-	IsUnique  int `json:"is_unique" db:"is_unique" msgpack:"is_unique"`
-	IsTest    int `json:"is_test" db:"is_test" msgpack:"is_test"`
+	IsUnique  uint8 `json:"is_unique" db:"is_unique" msgpack:"is_unique"`
+	IsTest    uint8 `json:"is_test" db:"is_test" msgpack:"is_test"`
 	IsClick   int `json:"is_click" db:"is_click" msgpack:"is_click"`
 
 	ProcessInterval float64 `json:"process_interval" db:"process_interval" msgpack:"process_interval"`
@@ -40,7 +40,7 @@ type FullTraffic struct {
 	City        string  `json:"city" db:"city" msgpack:"city"`
 	Ip          uint    `json:"ip" db:"ip" msgpack:"ip"`
 	Device      int     `json:"device" db:"device" msgpack:"device"`
-	IsMobil     int     `json:"is_mobil" db:"is_mobil" msgpack:"is_mobil"`
+	IsMobil     uint8     `json:"is_mobil" db:"is_mobil" msgpack:"is_mobil"`
 	Ad          string  `json:"ad" db:"ad" msgpack:"ad"`
 	Site        string  `json:"site" db:"site" msgpack:"site"`
 

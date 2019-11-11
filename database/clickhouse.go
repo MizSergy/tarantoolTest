@@ -74,7 +74,7 @@ func SqlxConnect() *sqlx.DB {
 }
 
 
-func writeBreak(items []models.Breaking) {
+func WriteBreak(items []models.Breaking) {
 	time.Sleep(time.Second)
 	query := `
 					INSERT INTO tracker_db.breaking
@@ -113,16 +113,16 @@ func writeBreak(items []models.Breaking) {
 		}
 		if _, err := stmt.Exec(
 			item.VCode,
-			item.IVCode,
-			item.CreateAt,
-			item.IsBreaked,
+			uint32(item.IVCode),
+			time.Unix(int64(item.CreatedAt), 0),
+			uint8(item.IsBreaked),
 			item.StreamID,
 			item.ProcessInterval,
 			item.AffiliateID,
 			item.ScreenHeight,
 			item.ScreenWidth,
 			item.Language,
-			item.IsRefused,
+			uint8(item.IsRefused),
 		); err != nil {
 			panic(err.Error())
 		}
@@ -136,7 +136,7 @@ func writeBreak(items []models.Breaking) {
 	clickhouse.Close()
 }
 
-func writeClicks(items []models.Click) {
+func WriteClicks(items []models.Click) {
 	query := `INSERT INTO tracker_db.click_logs
 			(create_at,
 			vcode,
@@ -190,21 +190,21 @@ func writeClicks(items []models.Click) {
 	}
 	for _, item := range items {
 		if _, err := stmt.Exec(
-			item.CreateAt,
+			time.Unix(int64(item.CreatedAt), 0),
 			item.VCode,
-			item.IVCode,
-			item.IsUnique,
+			uint32(item.IVCode),
+			uint8(item.IsUnique),
 			item.Campaign,
 			item.SourceID,
 			item.ClickPrice,
-			item.IsMobil,
+			uint8(item.IsMobil),
 			item.Device,
 			item.Browser,
 			item.Os,
 			item.Country,
 			item.Region,
 			item.City,
-			item.Ip,
+			uint32(item.Ip),
 			item.Ad,
 			item.Site,
 			item.Sid1,
@@ -220,7 +220,7 @@ func writeClicks(items []models.Click) {
 			item.PrelandUrl,
 			item.PrelandID,
 			item.Session,
-			item.IsTest,
+			uint8(item.IsTest),
 			item.CountryCode,
 			item.OsV,
 			item.BrowserV,
@@ -241,7 +241,7 @@ func writeClicks(items []models.Click) {
 
 
 // Записываем постбеки в таблицу постбеков
-func writePostback(items []models.PostBack) {
+func WritePostback(items []models.PostBack) {
 	time.Sleep(time.Second)
 	query := `
 				INSERT INTO tracker_db.post_backs
@@ -280,9 +280,9 @@ func writePostback(items []models.PostBack) {
 		}
 		if _, err := stmt.Exec(
 			item.VCode,
-			item.IVCode,
-			item.CreateAt,
-			item.CreateDate,
+			uint32(item.IVCode),
+			time.Unix(int64(item.CreatedAt),0),
+			time.Unix(int64(item.CreatedDate),0),
 			item.Url,
 			item.Method,
 			item.Params,
@@ -377,15 +377,15 @@ func WriteTraffic(tr []models.FullTraffic){
 		}
 		if _, err := stmt.Exec(
 			item.VCode,
-			item.IVCode,
-			item.CreateAt,
-			item.CreateDate,
+			uint32(item.IVCode),
+			time.Unix(int64(item.CreatedAt),0),
+			time.Unix(int64(item.CreatedDate),0),
 			item.IsClick,
-			item.IsTest,
-			item.IsUnique,
-			item.IsMobil,
-			item.IsBreaked,
-			item.IsRefused,
+			uint8(item.IsTest),
+			uint8(item.IsUnique),
+			uint8(item.IsMobil),
+			uint8(item.IsBreaked),
+			uint8(item.IsRefused),
 			item.ScreenHeight,
 			item.ScreenWidth,
 			item.Language,
@@ -406,7 +406,7 @@ func WriteTraffic(tr []models.FullTraffic){
 			item.CountryCode,
 			item.Region,
 			item.City,
-			item.Ip,
+			uint32(item.Ip),
 			item.Ad,
 			item.Site,
 			item.Sid1,

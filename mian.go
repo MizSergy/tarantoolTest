@@ -27,7 +27,7 @@ func main() {
 
 	database.RedisInit()
 	database.TarantoolInit()
-	//database.ClickhouseInit()
+	database.ClickhouseInit()
 	write()
 	//read()
 }
@@ -67,6 +67,12 @@ func write() {
 								item.IVCode = uint(uid.ID())
 
 								item.CreatedAt = int(item.CreateAt.Unix())
+								hashSession := client.GetSessionData(item.Session)
+								if len(hashSession) == 0 {
+									item.IsUnique = 1
+									//client.SetSessionData(item.Session, time.Now().String())
+								}
+
 								traff = item.ClickToTraffic()
 								database.InsertOrUpdate(conn, "clicks", item)
 							case "queue_post_back":
@@ -150,6 +156,9 @@ func readClicks() {
 
 		fmt.Println("Забрали клики с ", k)
 	}
+
+	database.WriteClicks(clks)
+
 	for k, v := range database.TrConns {
 		if len(itdc[k]) > 0 {
 			fmt.Println("Удалили ", len(itdc[k]))
@@ -173,6 +182,9 @@ func readBreaks() {
 		}
 		fmt.Println("Забрали пробивы с ", k)
 	}
+
+	database.WriteBreak(brks)
+
 	for k, v := range database.TrConns {
 		if len(itdb[k]) > 0 {
 			fmt.Println("Удалили ", len(itdb[k]))
@@ -196,6 +208,9 @@ func readPostBacks() {
 		}
 		fmt.Println("Забрали пробивы с ", k)
 	}
+
+	database.WritePostback(pbs)
+
 	for k, v := range database.TrConns {
 		if len(itdb[k]) > 0 {
 			fmt.Println("Удалили ", len(itdb[k]))
@@ -220,6 +235,9 @@ func readTraffic() {
 		}
 		fmt.Println("Забрали трафик с ", k)
 	}
+
+	database.WriteTraffic(trfs)
+
 	for k, v := range database.TrConns {
 		if len(itdb[k]) > 0 {
 			fmt.Println("Удалили ", len(itdb[k]))

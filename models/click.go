@@ -7,9 +7,9 @@ type Click struct {
 	VCode     string    `json:"vcode" db:"vcode" msgpack:"vcode"`
 	CreatedAt int       `msgpack:"created_at"`
 
-	IsUnique    int     `json:"is_unique" db:"is_unique" msgpack:"is_unique"`
-	IsMobil     int     `json:"is_mobil" db:"is_mobil" msgpack:"is_mobil"`
-	IsTest      int     `json:"is_test" db:"is_test" msgpack:"is_test"`
+	IsUnique    uint8     `json:"is_unique" db:"is_unique" msgpack:"is_unique"`
+	IsMobil     uint8     `json:"is_mobil" db:"is_mobil" msgpack:"is_mobil"`
+	IsTest      uint8     `json:"is_test" db:"is_test" msgpack:"is_test"`
 	SourceID    int     `json:"source_id" db:"source_id" msgpack:"source_id"`
 	Campaign    int     `json:"campaign" db:"campaign" msgpack:"campaign"`
 	StreamId    int     `json:"stream_id" db:"stream_id" msgpack:"stream_id"`
