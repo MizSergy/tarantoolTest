@@ -13,9 +13,9 @@ import (
 )
 
 var bkrType = []string{
-	"queue_click",
-	"queue_breaking",
-	"checkTime",
+	//"queue_click",
+	//"queue_breaking",
+	//"checkTime",
 	"queue_post_back",
 }
 
@@ -128,6 +128,8 @@ func read() {
 		fmt.Println("Пробивы")
 		readTraffic()
 		fmt.Println("Трафик")
+		readPostBacks()
+		fmt.Println("Постбек")
 		time.Sleep(6 * time.Minute )
 	}
 
